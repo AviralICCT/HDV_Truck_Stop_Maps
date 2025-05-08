@@ -228,7 +228,7 @@ legendControl.addTo(map_a4cf6b5b97eb1ca32a76d93c4fb3d669);
         "></span>${label}`;
     }
 
-    fetch('http://localhost:8080/Downloads/Layer2sub.geojson')
+    fetch('Layer2sub.geojson')
         .then(response => response.json())
         .then(data => {
             L.geoJSON(data, {
@@ -405,12 +405,12 @@ async function loadH3GeoJSON(url) {
 }
 
 // Initial load
-loadH3GeoJSON('http://localhost:8080/Downloads/h3_cells_9_95_20.geojson');
+loadH3GeoJSON('h3_cells_9_95_20.geojson');
 
 // Listen for dropdown changes
 document.getElementById('h3Selector').addEventListener('change', function() {
     const selectedFile = this.value;
-    loadH3GeoJSON(`http://localhost:8080/Downloads/${selectedFile}`);
+    loadH3GeoJSON(`${selectedFile}`);
 });
 </script>
 

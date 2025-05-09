@@ -513,10 +513,10 @@
                 });
 
                 // Add all voltage layers to map by default
-                lowVoltageLayer.addTo(map);
-                mediumVoltageLayer.addTo(map);
-                highVoltageLayer.addTo(map);
-                noVoltageLayer.addTo(map);
+                // lowVoltageLayer.addTo(map);
+                // mediumVoltageLayer.addTo(map);
+                // highVoltageLayer.addTo(map);
+                // noVoltageLayer.addTo(map);
 
                 // Add substations to layer control
                 // Add to default layer control (hidden)
@@ -534,19 +534,19 @@
                         <label for="h3-toggle">PLot Truck Stoppage Data</label>
                     </div>
                     <div class="layer-toggle">
-                        <input type="checkbox" id="high-voltage-toggle" checked>
+                        <input type="checkbox" id="high-voltage-toggle" >
                         <label for="high-voltage-toggle">${makeLabelWithColor(categoryColors.highVoltage, "Substation (>132kV)")}</label>
                     </div>
                     <div class="layer-toggle">
-                        <input type="checkbox" id="medium-voltage-toggle" checked>
+                        <input type="checkbox" id="medium-voltage-toggle" >
                         <label for="medium-voltage-toggle">${makeLabelWithColor(categoryColors.mediumVoltage, "Substation (50kV-132kV)")}</label>
                     </div>
                     <div class="layer-toggle">
-                        <input type="checkbox" id="low-voltage-toggle" checked>
+                        <input type="checkbox" id="low-voltage-toggle" >
                         <label for="low-voltage-toggle">${makeLabelWithColor(categoryColors.lowVoltage, "Substation (<50kV)")}</label>
                     </div>
                     <div class="layer-toggle">
-                        <input type="checkbox" id="no-voltage-toggle" checked>
+                        <input type="checkbox" id="no-voltage-toggle" >
                         <label for="no-voltage-toggle">${makeLabelWithColor(categoryColors.noVoltage, "Substation (No Voltage Data)")}</label>
                     </div>
                 `;

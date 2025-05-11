@@ -615,7 +615,7 @@
 
 
 		// Fetch and process transmission line data
-        fetch('https://drive.google.com/uc?export=download&id=ROiuA-NFQH-_mLkCoa_Bnmu1C6kXS_to')
+        fetch('export.geojson')
             .then(response => response.json())
             .then(data => {
                 L.geoJSON(data, {

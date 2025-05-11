@@ -615,7 +615,7 @@
 
 
 		// Fetch and process transmission line data
-        fetch('https://github.com/AviralICCT/HDV_Truck_Stop_Maps/blob/99037b9d4c7668c3bf252de6361e2327ff2c15ba/export.geojson')
+        fetch('https://cors-anywhere.herokuapp.com/https://raw.githubusercontent.com/AviralICCT/HDV_Truck_Stop_Maps/main/export.geojson')
             .then(response => response.json())
             .then(data => {
                 L.geoJSON(data, {

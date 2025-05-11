@@ -615,7 +615,7 @@
 
 
 		// Fetch and process transmission line data
-        fetch('https://github.com/AviralICCT/HDV_Truck_Stop_Maps/raw/refs/heads/main/export.geojson')
+        fetch('https://github.com/AviralICCT/HDV_Truck_Stop_Maps/blob/12e0839964695084b8b00002e11f599715d54bb4/export.geojson')
             .then(response => response.json())
             .then(data => {
                 L.geoJSON(data, {

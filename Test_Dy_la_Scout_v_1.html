@@ -398,7 +398,7 @@
     </div>
 
     <div id="map"></div>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
     <script>
         // Initialize map with improved default view
         const map = L.map('map', {
@@ -615,13 +615,21 @@
 
 
 		// Fetch and process transmission line data
-        fetch('https://github.com/AviralICCT/HDV_Truck_Stop_Maps/blob/12e0839964695084b8b00002e11f599715d54bb4/export.geojson')
-            .then(response => response.json())
-            .then(data => {
-                L.geoJSON(data, {
-                    style: function(feature) {
-                        const voltageTag = feature.properties?.voltage;
-                        const category = categorizeVoltage(voltageTag);
+        
+
+	fetch('export.geojson.gz')
+  .then(response => {
+    if (!response.ok) throw new Error("Network response was not ok");
+    return response.arrayBuffer();
+  })
+  .then(buffer => {
+    const decompressed = pako.ungzip(new Uint8Array(buffer), { to: 'string' });
+    const data = JSON.parse(decompressed);
+
+    L.geoJSON(data, {
+      style: function(feature) {
+        const voltageTag = feature.properties?.voltage;
+        const category = categorizeVoltage(voltageTag);
                         
                         return {
                             color: categoryColors[category],

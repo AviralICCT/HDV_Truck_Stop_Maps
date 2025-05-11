@@ -615,7 +615,7 @@
 
 
 		// Fetch and process transmission line data
-        fetch('export.geojson')
+        fetch('https://drive.google.com/file/d/1ROiuA-NFQH-_mLkCoa_Bnmu1C6kXS_to/view?usp=sharing')
             .then(response => response.json())
             .then(data => {
                 L.geoJSON(data, {
@@ -777,7 +777,7 @@
         }
 
 		// Load initial H3 data
-        loadH3GeoJSON('http://localhost:8080/OneDrive%20-%20ICCT/Aviral%20Yadav/HDV/PSA%20Roadmap%20Tool/AL%20Data%20Analysis/HTML/h3_cells_5_100_50.geojson');
+        loadH3GeoJSON('h3_cells_5_100_50.geojson');
                 
                 // Add event listeners for custom toggles
                 document.getElementById('h3-toggle').addEventListener('change', function(e) {

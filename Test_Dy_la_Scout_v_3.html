@@ -1552,7 +1552,7 @@ map.on('draw:deleted', function(e) {
         drawnItems.removeLayer(layer);
     });
 });
-onst basemapToggle = L.Control.extend({
+const basemapToggle = L.Control.extend({
     options: { position: 'bottomright' },
     onAdd: function () {
         const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
